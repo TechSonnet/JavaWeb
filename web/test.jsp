@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: chang
   Date: 2023/4/17
@@ -11,6 +11,39 @@
     <title>Title</title>
 </head>
 <body>
-<h1>test</h1>
+
+<%
+    ArrayList<String> names = new ArrayList<>();
+    names.add("zhangsan");
+    names.add("lisi");
+    names.add("wangwu");
+
+    ArrayList<Integer> ages = new ArrayList<>();
+    ages.add(21);
+    ages.add(22);
+    ages.add(23);
+%>
+
+<table>
+    <tr>
+        <th>姓名</th>
+        <th>年龄</th>
+    </tr>
+    <%
+        for (int i = 0; i < names.size(); i++) {
+    %>
+    <tr>
+        <td>
+            <%=names.get(i)%>
+        </td>
+        <td>
+            <%=ages.get(i)%>
+        </td>
+    </tr>
+    <%
+        }
+    %>
+
+</table>
 </body>
 </html>
